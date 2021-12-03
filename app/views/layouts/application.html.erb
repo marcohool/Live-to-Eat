@@ -11,9 +11,24 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render "shared/header.html.erb" %>
+
+    <% if flash[:alert] %>
+      <section class="section">
+        <div class="notification is-danger">
+         <p class="alert"><%= alert %></p>
+        </div>
+      </section>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <section class="section">
+        <div class="notification is-danger">
+         <p class="notice"><%= notice %></p>
+        </div>
+      </section>
+    <% end %>
+
 
     <section class="section">
       <div class="container">
