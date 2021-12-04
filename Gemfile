@@ -15,6 +15,7 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bulma-rails', '~> 0.9.2'
 gem 'devise', '~> 4.8'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

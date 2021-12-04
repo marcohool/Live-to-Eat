@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<section class="section">
+  <p class="title is-1 has-text-centered"><%= t('recipes_title') %></p>
+  <p class="subtitle is-3 has-text-centered"><%= t('recipes_subtitle') %></p>
+  <div class="has-text-right">
+    <%= link_to new_recipe_path, class: 'has-text-right' do %>
+      <button class="button is-primary is-rounded"> New Recipe </button>
+    <% end %>
+  </div>
+</section>
+
+
+
 <div class="columns is-multiline">
   <% @recipes.each do |recipe| %>
     <div class="column is-one-quarter">
@@ -24,7 +36,6 @@
         </div>
         <footer class="card-footer">
           <%= link_to "View", recipe, class: "card-footer-item" %>
-          <%= puts 'TESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTTTESSSSSSSTTTTT' %>
           <% if user_signed_in? %>
             <% if current_user.id == recipe.user_id %>
               <%= link_to "Delete", recipe, method: :delete, data: { confirm: 'Are you sure?' } , class: "card-footer-item" %>
@@ -37,7 +48,3 @@
     </div>
   <% end %>
 </div>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
