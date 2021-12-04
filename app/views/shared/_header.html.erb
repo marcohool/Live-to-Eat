@@ -22,12 +22,13 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+            <%= link_to new_user_registration_path, class: "button is-light" do %>
+              <% t('sign_up') %>
+            <% end %>
           </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          <%= link_to new_user_session_path, class: "button is-light" do %>
+              <% t('log_in') %>
+            <% end %>
         </div>
       </div>
     </div>
