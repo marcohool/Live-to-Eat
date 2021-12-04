@@ -27,6 +27,10 @@
   </div>
 
   <div class="field">
+    <%= form.file_field :thumbnail, as: :file, required: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :prep %>
     <%= form.number_field :prep %>
   </div>
