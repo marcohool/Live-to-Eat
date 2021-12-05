@@ -38,10 +38,11 @@
             <% if current_user.id == recipe.user_id %>
               <%= link_to "Delete", recipe, method: :delete, data: { confirm: 'Are you sure?' } , class: "card-footer-item" %>
               <%= link_to "Edit", edit_recipe_path(recipe), class: "card-footer-item" %>
+            <% else %>
+              <%= link_to "Save", add_recipe_path(recipe, operation:"add"), method: :put, class:"card-footer-item" %>
             <% end %>
           <% end %>
         </footer>
-
       </div>
     </div>
   <% end %>

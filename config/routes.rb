@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :recipes
+  resources :recipes do
+    member do
+      put "add", to: "recipes#set_collection"
+      put "remove", to: "recipes#set_collection"
+    end
+  end
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root "recipes#index"
   get "collection/index", to: "collection#index"
+  root "recipes#index"
 end

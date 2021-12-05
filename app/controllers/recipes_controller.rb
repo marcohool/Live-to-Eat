@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[ show edit update destroy ]
+  before_action :set_recipe, only: %i[ show edit update destroy set_collection]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /recipes or /recipes.json
@@ -55,6 +55,17 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: "Recipe was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def set_collection
+    operation = params[:operation]
+      puts("yea yea")
+      puts(params[:operation])
+      if operation == "add"
+        puts("TEWST")
+        current_user.recipes_in_collection << @recipe
+        redirect_to collection_index_path, notice: "#{@recipe.title} was added to your saved recipes"
+      end
   end
 
   private
