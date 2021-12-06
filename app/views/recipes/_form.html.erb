@@ -1,48 +1,71 @@
 <%= form_with(model: recipe) do |form| %>
-  <% if recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+<% if recipe.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+  <ul>
+    <% recipe.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-      <ul>
-        <% recipe.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+<div class="field">
+  <label class="label"><%= t('title') %></label>
+  <div class="control">
+    <%= form.text_field :title, autofocus: true, class:"input", placeholder:"Title" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+<div class="field">
+  <label class="label"><%= t('description') %></label>
+  <div class="control">
+    <%= form.text_area :description, autofocus: true, class:"textarea", placeholder:"Description" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :method %>
-    <%= form.text_area :method %>
+<div class="field">
+  <label class="label"><%= t('method') %></label>
+  <div class="control">
+    <%= form.text_area :method, autofocus: true, class:"textarea", placeholder:"Method" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.file_field :thumbnail, as: :file, required: true %>
+<div class="file">
+  <label class="label"><%= t('thumbnail') %>
+    <label class="file-label">
+      <%= form.file_field :thumbnail, as: :file, required: true, class: "file-input", type: "file" , placeholder:"thumbnail" %>
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          <%= t('choose_thumbnail') %>
+        </span>
+      </span>
+    </label>
+  </label>
+</div>
+
+<div class="field">
+  <label class="label"><%= t('prep') %></label>
+  <div class="control">
+    <%= form.number_field :prep, autofocus: true, class: "input" , placeholder:"Prep" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :prep %>
-    <%= form.number_field :prep %>
+<div class="field">
+  <label class="label"><%= t('cooking_time') %></label>
+  <div class="control">
+    <%= form.number_field :cooking_time, autofocus: true, class: "input" , placeholder:"Cooking Time" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :cooking_time %>
-    <%= form.number_field :cooking_time %>
+
+<div class="container">
+  <div class="actions has-text-centered">
+    <%= form.submit "Create Recipe", class:"button is-primary is-fullwidth" %>
   </div>
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

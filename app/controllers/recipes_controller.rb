@@ -59,12 +59,12 @@ class RecipesController < ApplicationController
 
   def set_collection
     operation = params[:operation]
-      puts("yea yea")
-      puts(params[:operation])
       if operation == "add"
-        puts("TEWST")
         current_user.recipes_in_collection << @recipe
         redirect_to collection_index_path, notice: "#{@recipe.title} was added to your saved recipes"
+      else
+        current_user.recipes_in_collection.delete(@recipe)
+        redirect_to collection_index_path, notice: "#{@recipe.title} was removed from your saved recipes"
       end
   end
 

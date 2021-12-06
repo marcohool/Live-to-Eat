@@ -40,5 +40,21 @@ en:
   log_out: "Log Out"
   edit_profile: "Edit Profile"
 
+  title: "Title"
+  description: "Description"
+  method: "Method"
+  thumbnail: "Thumbnail"
+  prep: "Prep (minutes)"
+  cooking_time: "Cooking time (minutes)"
+  cooking_time_view_label: "Cooking Time"
+  prepartion_time_view_label: "Preperation Time"
+  choose_thumbnail: "Choose a file"
+
   recipes_title: "Recipes"
   recipes_subtitle: "Find something to quench your hunger"
+  method: "Method"
+
+  saved_recipes_title: "Saved Recipes"
+  saved_recipes_description: "View your favourite meals"
+  new_recipe_title: "New Recipe"
+  edit_recipe_title: "Edit Recipe"

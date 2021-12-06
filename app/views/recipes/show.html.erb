@@ -1,32 +1,31 @@
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+<section class="section">
+  <p class="title is-1 has-text-centered"><%= @recipe.title %></p>
+  <p class="subtitle is-5 has-text-centered"><%= @recipe.description %></p>
+  <p class="subtitle is-7 has-text-centered">Created by <a><%= @recipe.author %></a></p>
+</section>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
-
-<p>
-  <strong>Method:</strong>
-  <%= @recipe.method %>
-</p>
-
-<p>
-  <strong>Prep:</strong>
-  <%= @recipe.prep %>
-</p>
-
-<p>
-  <strong>Cooking time:</strong>
-  <%= @recipe.cooking_time %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @recipe.author %>
-</p>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<div class="tile is-ancestor">
+  <div class="tile is-6 is-vertical is-parent">
+    <div class="tags has-addons is-centered">
+      <span class="tag is-medium"><%= t('prepartion_time_view_label') %> </span>
+      <span class="tag is-primary is-medium"><%= @recipe.prep %> minutes</span>
+      <span class="tag is-medium"><%= t('cooking_time_view_label') %> </span>
+      <span class="tag is-primary is-medium"><%= @recipe.cooking_time %> minutes</span>
+    </div>
+    <div class="tile is-child box">
+      <%= link_to image_tag(@recipe.thumbnail), @recipe %>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title"><%= t('method') %> </p>
+      <p> <%= @recipe.method %> </p>
+      <% if user_signed_in? %>
+        <% if current_user.id == @recipe.user_id %>
+        <br>
+          <p><%= link_to "Edit", edit_recipe_path(@recipe), class:"tag is-medium is-warning" %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
