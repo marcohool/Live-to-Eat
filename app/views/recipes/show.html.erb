@@ -19,7 +19,7 @@
   <div class="tile is-parent">
     <div class="tile is-child box">
       <p class="title"><%= t('method') %> </p>
-      <p> <%= @recipe.method %> </p>
+      <p id="method_text"> <%= @recipe.method %> </p>
       <% if user_signed_in? %>
         <% if current_user.id == @recipe.user_id %>
         <br>
