@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   devise_for :users
   get "collection/index", to: "collection#index"
-  root "recipes#index"
+  root "home#home"
 end
