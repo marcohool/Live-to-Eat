@@ -3,7 +3,7 @@
   <p class="subtitle is-3 has-text-centered"><%= t('.contact_us') %></p>
 </section>
 
-<%= form_tag request_contact_path, method: 'post' do %>
+<%= form_tag request_contact_path, id:"contact_form", method: 'post' do %>
 
 <div class="field">
   <%= label_tag :name, t('.name'), class:"label" %>

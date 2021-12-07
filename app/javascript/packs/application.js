@@ -13,3 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require('jquery')
+require("packs/validation")
+
+import "jquery-validation/dist/jquery.validate"
