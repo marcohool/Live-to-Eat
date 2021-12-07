@@ -1,6 +1,8 @@
 
 // Validation for form input, setting the required fields and the messages the user will see if they fail to input said fields
-$(document).ready(function () {
+
+$(document).on('turbolinks:load', function () {
+  console.log("Ready")
    $("#contact_form").validate({
       rules: {
          name: 'required',
