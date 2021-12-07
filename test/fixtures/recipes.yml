@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  method: MyText
-  prep: 1
-  cooking_time: 1
-  author: MyString
+  title: Porridge
+  description: A porridge
+  method: Porridge method
+  prep: 5
+  cooking_time: 5
+  author: Michael
 
 two:
-  title: MyString
-  description: MyText
-  method: MyText
-  prep: 1
-  cooking_time: 1
-  author: MyString
+  title: Salad
+  description: A salad
+  method: Salad method
+  prep: 5
+  cooking_time: 5
+  author: Tom

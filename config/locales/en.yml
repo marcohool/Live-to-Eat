@@ -62,6 +62,9 @@ en:
   edit_recipe_title: "Edit Recipe"
 
   home:
+    home:
+      title: Live to Eat
+      description: Your go to place for all of your favourite foods
     contact:
       title: Contact Us
       contact_us: Complete the following form to get in touch with us
