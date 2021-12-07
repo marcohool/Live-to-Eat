@@ -12,6 +12,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
+// Use jqery and jquery-validation for validation form fields
 require('jquery')
 require("packs/validation")
 

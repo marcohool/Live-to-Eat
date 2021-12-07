@@ -1,3 +1,4 @@
+<!-- Title, subtitle and new recipes button -->
 <section class="section">
   <p class="title is-1 has-text-centered"><%= t('recipes_title') %></p>
   <p class="subtitle is-3 has-text-centered"><%= t('recipes_subtitle') %></p>
@@ -9,9 +10,8 @@
 </section>
 
 
-
+<!-- Columns with cards for each recipe uploaded -->
 <div class="columns is-multiline">
-
   <% @recipes.each do |recipe| %>
     <div class="column is-one-quarter">
       <div class="card">
@@ -36,13 +36,16 @@
           </div>
         </div>
         <footer class="card-footer">
+          <!-- Display view button for everyone, delete and edit button is user created the recipe and add button if user is signed in and hasnt already added the meal before -->
           <%= link_to "View", recipe, class: "card-footer-item" %>
           <% if user_signed_in? %>
             <% if current_user.id == recipe.user_id %>
               <%= link_to "Delete", recipe, method: :delete, data: { confirm: 'Are you sure?' } , class: "card-footer-item" %>
               <%= link_to "Edit", edit_recipe_path(recipe), class: "card-footer-item" %>
             <% else %>
-              <%= link_to "Save", add_recipe_path(recipe, operation:"add"), method: :put, class:"card-footer-item" %>
+              <% if not current_user.recipes_in_collection.include?(recipe) %>
+                <%= link_to "Save", add_recipe_path(recipe, operation:"add"), method: :put, class:"card-footer-item" %>
+              <% end %>
             <% end %>
           <% end %>
         </footer>

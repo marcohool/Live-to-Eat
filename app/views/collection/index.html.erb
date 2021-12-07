@@ -1,8 +1,10 @@
+<!-- Title and subtitle -->
 <section class="section">
   <p class="title is-1 has-text-centered"><%= t('saved_recipes_title') %></p>
   <p class="subtitle is-3 has-text-centered"><%= t('saved_recipes_description') %></p>
 </section>
 
+<!-- Displays all of users saved recipes in Bulma columns -->
 <div class="columns is-multiline">
   <% @saved_recipes.each do |recipe| %>
     <div class="column is-one-quarter">

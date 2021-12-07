@@ -1,3 +1,5 @@
+
+// Validation for form input, setting the required fields and the messages the user will see if they fail to input said fields
 $(document).ready(function () {
    $("#contact_form").validate({
       rules: {

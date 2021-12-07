@@ -57,8 +57,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  # Add and remove recipes from a users collection
   def set_collection
     operation = params[:operation]
+    # Remove or adds recipe to collection based of parameters in link
       if operation == "add"
         current_user.recipes_in_collection << @recipe
         redirect_to collection_index_path, notice: "#{@recipe.title} was added to your saved recipes"

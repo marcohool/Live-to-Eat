@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :recipes do
+    # Appends add or remove to url depending on if user wants to add or remove recipe from their collection
     member do
       put "add", to: "recipes#set_collection"
       put "remove", to: "recipes#set_collection"
