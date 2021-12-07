@@ -65,13 +65,13 @@ en:
     contact:
       title: Contact Us
       contact_us: Complete the following form to get in touch with us
-      name: "Name:"
+      name: "Name"
       enter_name: Enter your name
-      email: "Email:"
+      email: "Email"
       enter_email: Enter your email address
-      telephone: "Telephone:"
+      telephone: "Telephone"
       enter_telephone: Enter your telephone number
-      message: "Message:"
+      message: "Message"
       enter_message: What do you want to say?
       submit: Contact Us
 
