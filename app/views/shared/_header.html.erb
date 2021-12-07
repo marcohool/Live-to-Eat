@@ -18,6 +18,14 @@
       <h1 class="has-text-weight-medium"> Recipes </h1>
       <% end %>
     </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start ">
+        <%= link_to contact_path, class: 'navbar-item' do %>
+        <h1 class="has-text-weight-medium"> <%= t('help_navbar_element') %> </h1>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <% if user_signed_in? %>
