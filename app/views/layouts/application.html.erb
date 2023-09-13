@@ -5,31 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> %>
   </head>
-
   <body>
     <%= render "shared/header.html.erb" %>
     <!-- Display notices and alerts below navbar as Bulma componenets -->
     <% if flash[:alert] %>
       <section class="section">
         <div class="notification is-danger">
-         <p class="alert"><%= alert %></p>
+          <p class="alert"><%= alert %></p>
         </div>
       </section>
     <% end %>
-
     <% if flash[:notice] %>
       <section class="section">
         <div class="notification is-success">
-         <p class="notice"><%= notice %></p>
+          <p class="notice"><%= notice %></p>
         </div>
       </section>
     <% end %>
-
-
     <section class="section">
       <div class="container">
         <%= yield %>

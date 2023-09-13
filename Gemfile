@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'sqlite3', '~> 1.4'
@@ -17,6 +17,7 @@ gem 'bulma-rails', '~> 0.9.2'
 gem 'devise', '~> 4.8'
 gem 'font_awesome5_rails'
 gem 'rails-controller-testing'
+gem 'tzinfo-data', '1.2023.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -35,4 +36,3 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
